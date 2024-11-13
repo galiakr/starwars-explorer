@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ChevronLeft, Pencil, Trash2 } from 'lucide-react';
+import { Pencil, Trash2 } from 'lucide-react';
+import { HomeButton } from './HomeButton';
 
 interface Person {
   name: string;
@@ -113,13 +114,7 @@ export const PeoplePage = () => {
           >
             Create a New Character
           </button>
-          <button
-            onClick={() => navigate(`/`)}
-            className="mt-2 ml-2 flex text-slate-500 hover:text-amber-300"
-          >
-            <ChevronLeft className="mt-1" size={16} />
-            Back to Home
-          </button>
+          <HomeButton />
         </div>
       </div>
 

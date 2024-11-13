@@ -1,10 +1,8 @@
 import { useParams } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
+import { HomeButton } from './HomeButton';
 
 export const CategoryPage = () => {
   const { category } = useParams();
-  const navigate = useNavigate();
 
   if (category?.toLowerCase() === 'people') {
     return null;
@@ -16,13 +14,7 @@ export const CategoryPage = () => {
         {category}
       </h1>
       <p className="mt-4 text-slate-500">This category page is comming soon</p>
-      <button
-        onClick={() => navigate(`/`)}
-        className="mt-4 flex text-slate-500 hover:text-amber-300"
-      >
-        <ChevronLeft className="mt-1" size={16} />
-        Back to Home
-      </button>
+      <HomeButton />
     </div>
   );
 };
