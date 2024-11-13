@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { SearchBar } from './components/SearchBar';
+import { PeoplePage } from './components/PeoplePage';
+import { CategoryPage } from './components/CategoryPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="min-h-screen">
+        <nav className="bg-gradient-to-r from-slate-900 to-slate-300 text-white p-4">
+          <div className="max-w-6xl mx-auto">
+            <a href="/" className="text-xl font-bold text-amber-300">
+              The StarWars Explorer
+            </a>
+          </div>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<SearchBar />} />
+          <Route path="/category/people" element={<PeoplePage />} />
+          <Route path="/category/:category" element={<CategoryPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
