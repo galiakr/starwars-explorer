@@ -79,10 +79,10 @@ export const SearchBar = () => {
           <ul className="space-y-2">
             {categoryResults.map((result: any) => (
               <li
-                key={result.name}
+                key={result.name || result.title}
                 className="p-3 rounded-lg text-slate-500 bg-slate-50 hover:bg-slate-100 transition-colors"
               >
-                {result.name}
+                {result.name || result.title}
               </li>
             ))}
           </ul>
